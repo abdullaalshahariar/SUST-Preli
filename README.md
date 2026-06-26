@@ -28,7 +28,7 @@ This service utilizes a **Heuristic Reasoning Engine** rather than a heavy LLM.
 
 ### Deployment URL
 ```
-<url>
+https://sust-preli-q40g.onrender.com/health
 ```
 
 ### Local Setup
@@ -37,9 +37,12 @@ This service utilizes a **Heuristic Reasoning Engine** rather than a heavy LLM.
    ```bash
    pip install -r requirements.txt
 3. Run the server:
+```
 uvicorn main:app --host 0.0.0.0 --port 8000
+```
 
 ### Docker Setup
+```
 docker build -t queuestorm-investigator .
 docker run -p 8000:8000 queuestorm-investigator
-
+```
