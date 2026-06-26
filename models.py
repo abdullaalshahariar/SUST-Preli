@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from enum import Enum
-from typing import List, Optional, Union
+from typing import List, Optional
 
 # Enum definitions 
 
