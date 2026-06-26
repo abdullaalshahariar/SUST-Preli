@@ -46,3 +46,11 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 docker build -t queuestorm-investigator .
 docker run -p 8000:8000 queuestorm-investigator
 ```
+
+
+## Known Limitations
+As this service utilizes a heuristic (rule-based) engine to maximize speed and safety, the following limitations are acknowledged:
+- **Semantic Nuance:** The system relies on keyword matching and regex patterns. It may struggle with highly complex narratives or heavy use of sarcasm that lacks specific financial "signals" (like amounts or IDs).
+- **Linguistic Variation:** While it covers common English, Bangla, and "Banglish" terms for financial transactions, extremely rare slang or unconventional spelling may not trigger the intended keyword matches.
+- **Strict Matching:** The transaction matcher currently looks for exact amount matches. It may not resolve cases where the customer accounts for service fees (e.g., reporting 5010 BDT for a 5000 BDT transaction).
+- **Fixed Templates:** Responses are generated based on pre-defined safety-first templates. They lack the conversational fluidity of a Large Language Model but guarantee compliance with Section 8 Safety Rules.

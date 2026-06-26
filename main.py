@@ -194,7 +194,7 @@ def extract_evidence_signals(text: str):
     amounts = [float(a) for a in amounts]
 
     # 2. possible phone numbers / IDs (very loose)
-    phone_like = re.findall(r"\+?\d{10,13}", text)
+    phone_like = re.findall(r"(?:\+?8801[3-9]\d{8}|01[3-9]\d{8})", text)
 
     # 3. transaction id
     txn_ids = re.findall(r"\bTXN-\d+\b", text.upper())
